@@ -10,7 +10,9 @@ case $- in
       *) return;;   # if anything else, return
 esac
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # starship
 eval "$(starship init zsh)"
