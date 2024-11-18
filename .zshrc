@@ -17,14 +17,22 @@ fi
 # starship
 eval "$(starship init zsh)"
 
-# helper functions
+# funcs
 cheat() { curl cheat.sh/$1; }
-weather() { curl wttr.in; }
-weather2() { curl v2.wttr.in; }
-alias prettyjson="python3 -m json.tool"
-alias mpv-audio="mpv --no-audio-display"
-alias mpv-audio-y="mpv --ytdl-format='bestaudio/best'"
-alias mpv-video-y="mpv --ytdl-format='bestvideo[height<=?720]+bestaudio/best'"
+weather() {
+    if [ -z "$1" ]; then
+        curl wttr.in
+    else
+        curl wttr.in/$1
+    fi
+}
+weather2() {
+    if [ -z $1 ]; then
+        curl v2.wttr.in/$1
+    else
+        curl v2.wttr.in
+    fi
+}
 
 # goto to fuzzy dir
 kek() {
