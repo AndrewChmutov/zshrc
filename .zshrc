@@ -39,9 +39,6 @@ kek() {
     fi
 }
 
-# edit fuzzy file
-alias vk='TEMP_DIR=$(find "." -type f | fzf); [ "$TEMP_DIR" = "" ] || nvim $TEMP_DIR'
-
 # See zsh(1) for more options
 HISTCONTROL=ignoredups   # ignore duplicate lines
 HISTFILE=~/.zsh_history
