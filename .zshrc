@@ -46,6 +46,7 @@ alias vk='TEMP_DIR=$(find "." -type f | fzf); [ "$TEMP_DIR" = "" ] || nvim $TEMP
 HISTCONTROL=ignoredups   # ignore duplicate lines
 HISTFILE=~/.zsh_history
 setopt appendhistory     # append to the history file, don't overwrite it
+setopt share_history     # share history among running sessions
 HISTSIZE=1000            # history command size
 SAVEHIST=2000            # history file size
 
