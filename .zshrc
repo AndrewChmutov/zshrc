@@ -14,6 +14,14 @@ if [ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+if command -v fzf 2>&1 >/dev/null; then
+    export FZF_CTRL_R_OPTS="
+      --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+      --color header:italic
+      --header 'Press CTRL-Y to copy command into clipboard'"
+    source <(fzf --zsh)
+fi
+
 # starship
 eval "$(starship init zsh)"
 
