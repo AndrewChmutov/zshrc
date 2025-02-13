@@ -55,6 +55,15 @@ kek() {
     fi
 }
 
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
 # See zsh(1) for more options
 HISTCONTROL=ignoredups   # ignore duplicate lines
 HISTFILE=~/.zsh_history
