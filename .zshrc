@@ -119,6 +119,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+export NTLK_DATA="$HOME/.local/state/ntlk_data"
+
 export RUSTUP_TOOLCHAIN=stable
 # Load Cargo environment if it exists
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
