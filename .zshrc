@@ -72,3 +72,4 @@ y() {
 ###########
 
 WINIT_X11_SCALE_FACTOR=1
+set -o emacs
